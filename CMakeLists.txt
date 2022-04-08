@@ -17,7 +17,6 @@ file(GLOB aes_SRC
 
 set(SOURCES
     ${aes_SRC}
-    #${CMAKE_SOURCE_DIR}/lib/tiny-AES-c/aes.c
 )
 
 add_executable(${CMAKE_PROJECT_NAME} src/main.cpp ${SOURCES})
