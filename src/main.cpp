@@ -34,7 +34,7 @@ int main() {
     }    
 
     /* print data */
-    cout << "key:" << endl;
+    cout << "AES key:" << endl;
     PrintData(key, sizeof(key));
     cout << endl;
 
@@ -44,19 +44,19 @@ int main() {
     PrintData(seed, sizeof(seed));
     cout << endl;
 
-    /* encrypt seed */ 
+    /* encrypt data */ 
     struct AES_ctx ctx;
     AES_init_ctx(&ctx, key);
-    AES_ECB_encrypt(&ctx, seed);
+    AES_ECB_encrypt(&ctx, seed); 
 
-    cout << "encrypted seed (=key):" << endl;
+    cout << "encrypted data (=UDS KEY):" << endl;
     PrintData(seed, sizeof(seed));
     cout << endl;
 
-    /* decrypt key */
+    /* decrypt data */
     AES_ECB_decrypt(&ctx, seed);
 
-    cout << "decrypted key (=seed):" << endl;
+    cout << "decrypted data:" << endl;
     PrintData(seed, sizeof(seed));
     cout << endl;
 
